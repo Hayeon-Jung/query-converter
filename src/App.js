@@ -6,15 +6,12 @@ function App() {
   const [inputValue, setInputValue] = useState([]);
   const handleSubmit = (event) => {
     event.preventDefault();
-    setPostgresql((current) => { // 여기 if를 수정해서 변환작업 하기
-      if (inputValue.includes("what")) {
-        const word = inputValue.split(' ');
+    setPostgresql((current) => { 
+      if (inputValue.includes("FROM dual")) {
+        const word = inputValue.split('FROM');
 
         return [...current, {
-          value: word[0], 
-          /* 치환 혹은 배열로 
-          분리 하여 변환된 문장 조합
-          일단 출력은 되는데요 원하는 함수만 출력하려는 방법이 */
+          value: `${word[0]};`, 
         },];
       }
       else return [...current, {
