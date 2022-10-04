@@ -7,6 +7,7 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setPostgresql((current) => { 
+      /* 어쩌고 저쩌고 */
       if (/from dual *;/i.test(inputValue) === true) {
         const word = inputValue.split(/FROM/i);
 
